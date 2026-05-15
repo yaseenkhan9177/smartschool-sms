@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Own Education</title>
+    <title>Home - Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
 
     <!-- Fonts -->
@@ -214,9 +214,9 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0 flex items-center gap-3">
                     <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center p-0.5 group hover:scale-110 transition-transform duration-300">
-                        <img src="{{ asset('assets/img/logo.jpg') }}" alt="Own Education" class="w-full h-full rounded-full object-cover">
+                        <img src="{{ asset('assets/img/logo.jpg') }}" alt="Veata Education" class="w-full h-full rounded-full object-cover">
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-white">Own <span class="text-blue-400">Education</span></span>
+                    <span class="font-bold text-xl tracking-tight text-white">Veata <span class="text-blue-400">Education</span></span>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -301,12 +301,12 @@
             </div>
 
             <h1 class="text-5xl lg:text-8xl font-bold tracking-tight text-white mb-4 leading-tight drop-shadow-lg">
-                Own <br>
+                Veata <br>
                 <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Education</span>
             </h1>
 
             <p class="mt-4 text-xl lg:text-2xl text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-light drop-shadow-md">
-                The Complete School Management System for Pakistan.
+                The Complete School Management System.
             </p>
 
 
@@ -344,7 +344,7 @@
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center" data-aos="fade-down">
             <h2 class="text-4xl lg:text-6xl font-bold text-white mb-6">Highlights & <span class="text-gradient">Campus Life</span></h2>
-            <p class="text-slate-400 text-xl max-w-2xl mx-auto">Explore the vibrant community and state-of-the-art facilities that make Own Education unique.</p>
+            <p class="text-slate-400 text-xl max-w-2xl mx-auto">Explore the vibrant community and state-of-the-art facilities that make Veata Education unique.</p>
         </div>
 
         <!-- Swiper -->
@@ -551,7 +551,7 @@
                     <div class="swiper-slide !w-full md:!w-[400px] !h-auto !bg-transparent p-4">
                         <div class="glass-card p-8 rounded-3xl h-full flex flex-col relative">
                             <i class="fa-solid fa-quote-left text-4xl text-purple-500/20 absolute top-6 left-6"></i>
-                            <p class="text-slate-300 mb-6 relative z-10 pt-4 leading-relaxed">"Own Education provided me with the foundation I needed to excel in university. The personalized attention from teachers was invaluable."</p>
+                            <p class="text-slate-300 mb-6 relative z-10 pt-4 leading-relaxed">"Veata Education provided me with the foundation I needed to excel in university. The personalized attention from teachers was invaluable."</p>
                             <div class="mt-auto flex items-center gap-4">
                                 <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-purple-500" alt="Alumni">
                                 <div>
@@ -774,7 +774,7 @@
                 <div class="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                 <h2 class="text-5xl font-bold text-white mb-8 relative z-10">Ready to Transform Your Future?</h2>
-                <p class="text-xl text-slate-300 mb-12 relative z-10 max-w-2xl mx-auto">Join thousands of students and educators who have already embraced the future of learning with Own Education.</p>
+                <p class="text-xl text-slate-300 mb-12 relative z-10 max-w-2xl mx-auto">Join thousands of students and educators who have already embraced the future of learning with Veata Education.</p>
 
                 <div class="flex flex-col sm:flex-row justify-center gap-6 relative z-10">
                     <a href="{{ route('student.register') }}" class="px-10 py-5 rounded-2xl bg-white text-slate-900 font-bold text-xl hover:bg-blue-50 transition-all hover:scale-105 shadow-xl hover:shadow-2xl hover:shadow-white/20">
@@ -794,7 +794,7 @@
                         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
                             <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
                         </div>
-                        <span class="font-bold text-2xl text-white">Own <span class="text-blue-400">Education</span></span>
+                        <span class="font-bold text-2xl text-white">Veata <span class="text-blue-400">Education</span></span>
                     </div>
                     <p class="text-slate-400 max-w-sm leading-relaxed text-lg">
                         Empowering educational institutions with cutting-edge technology for a brighter, more connected future.
@@ -826,7 +826,7 @@
 
             <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
                 <p class="text-slate-500 text-sm">
-                    &copy; 2026 Own Education. All Rights Reserved.
+                    &copy; 2026 Veata Education. All Rights Reserved.
                 </p>
                 <div class="flex gap-6">
                     <!-- Removed Social Links -->
@@ -962,7 +962,7 @@
 
             <div class="p-4 bg-slate-50 h-64 overflow-y-auto space-y-3 text-sm">
                 <div class="bg-white p-3 rounded-lg rounded-tl-none shadow-sm max-w-[85%] text-slate-700">
-                    Hello! 👋 Welcome to Own Education. How can we help you today?
+                    Hello! 👋 Welcome to Veata Education. How can we help you today?
                 </div>
                 <!-- Mock User Message -->
                 <!-- <div class="bg-blue-100 p-3 rounded-lg rounded-tr-none shadow-sm max-w-[85%] ml-auto text-blue-900">

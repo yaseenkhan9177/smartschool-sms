@@ -136,7 +136,7 @@
     @endif
 
     <footer class="mt-auto py-6 text-center text-xs text-gray-400">
-        &copy; {{ date('Y') }} Own Education Systems. All rights reserved.
+        &copy; {{ date('Y') }} Veata Education. All rights reserved.
     </footer>
 
 </body>

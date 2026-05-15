@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Dashboard | SMS Portal</title>
+    <title>Teacher Dashboard | Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">

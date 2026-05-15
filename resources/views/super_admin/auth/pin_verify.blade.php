@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security PIN Verification | Own Education</title>
+    <title>Security PIN Verification | Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
 
     <!-- Fonts -->

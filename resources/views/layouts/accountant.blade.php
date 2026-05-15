@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accountant Dashboard | Own Education</title>
+    <title>Accountant Dashboard | Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 
@@ -302,7 +302,7 @@
                 @yield('content')
 
                 <footer class="mt-12 text-center text-xs text-gray-400 pb-8">
-                    &copy; {{ date('Y') }} Own Education Systems. All rights reserved.
+                    &copy; {{ date('Y') }} Veata Education. All rights reserved.
                 </footer>
             </main>
         </div>

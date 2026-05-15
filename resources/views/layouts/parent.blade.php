@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parent Portal | Own Education</title>
+    <title>Parent Portal | Veata Education</title>
     <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,7 +155,7 @@
     </main>
 
     <footer class="mt-auto py-6 text-center text-xs text-gray-400 no-print">
-        &copy; {{ date('Y') }} Own Education Systems. All rights reserved.
+        &copy; {{ date('Y') }} Veata Education. All rights reserved.
     </footer>
 
     @include('partials.pwa-scripts')

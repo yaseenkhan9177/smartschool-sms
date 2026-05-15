@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Dashboard | SMS Portal</title>
+    <title>Student Dashboard | Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -331,7 +331,7 @@
         <footer class="glass mt-auto">
             <div class="container mx-auto px-4 sm:px-6 py-4">
                 <div class="text-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-                    © {{ date('Y') }} School Management System. All rights reserved.
+                    © {{ date('Y') }} Veata Education. All rights reserved.
                 </div>
             </div>
         </footer>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Profile | AstriaLearning</title>
+    <title>Teacher Profile | Veata Education</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -261,7 +261,7 @@
                 </div>
 
                 <footer class="mt-12 text-center text-xs text-gray-400 pb-8">
-                    &copy; {{ date('Y') }} AstriaLearning Systems. All rights reserved.
+                    &copy; {{ date('Y') }} Veata Education. All rights reserved.
                 </footer>
 
             </main>

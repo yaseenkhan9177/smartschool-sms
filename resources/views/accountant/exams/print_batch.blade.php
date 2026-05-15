@@ -166,7 +166,7 @@
 
         <div class="header-section">
             <div class="school-info">
-                <h1>Own Education</h1>
+                <h1>Veata Education</h1>
                 <p>Excellence in Education</p>
                 <p>Phone: 123-456-7890 | Email: info@owneducation.com</p>
             </div>

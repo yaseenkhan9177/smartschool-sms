@@ -9,7 +9,7 @@
     </a>
 
     <div class="px-6 mt-8 mb-2">
-        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">School Management</p>
+        <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Veata Education</p>
     </div>
 
     <a href="{{ route('super_admin.create_school') }}" class="flex items-center gap-3 px-4 py-3 mx-2 text-sm font-medium rounded-xl {{ request()->routeIs('super_admin.create_school') ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-slate-400 hover:bg-slate-800/50 hover:text-white' }} transition-colors group">

@@ -68,7 +68,7 @@
                     <i class="fas fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h1 class="text-3xl font-bold uppercase tracking-wider">Own Education System</h1>
+                    <h1 class="text-3xl font-bold uppercase tracking-wider">Veata Education</h1>
                     <p class="text-blue-200 mt-1 print:text-black">Excellence in Education</p>
                     <p class="text-xs text-blue-300 mt-1 print:text-gray-600">123 School Road, City, Country</p>
                 </div>

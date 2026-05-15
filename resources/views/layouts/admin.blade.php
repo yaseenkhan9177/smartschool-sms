@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard | Own Education</title>
+    <title>Admin Dashboard | Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
     <link rel="manifest" href="{{ asset('manifest.json') }}">
 
@@ -106,7 +106,7 @@
                 </a>
 
                 <div class="px-6 mt-6 mb-2">
-                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">School Management</p>
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Veata Education</p>
                 </div>
 
                 <a href="{{ route('admin.students') }}" class="flex items-center gap-3 px-4 py-3 mx-2 text-sm font-medium rounded-xl {{ request()->routeIs('admin.students') ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-slate-400 hover:bg-slate-800/50 hover:text-white' }} transition-colors group justify-between">
@@ -343,7 +343,7 @@
                 @yield('content')
 
                 <footer class="mt-12 text-center text-xs text-gray-400 pb-8">
-                    &copy; {{ date('Y') }} Own Education Systems. All rights reserved.
+                    &copy; {{ date('Y') }} Veata Education. All rights reserved.
                 </footer>
             </main>
         </div>

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | AstriaLearning SMS</title>
+    <title>Login | Veata Education</title>
     <link rel="icon" type="image/jpeg" href="{{ asset('assets/img/logo-round.jpg') }}">
 
     <!-- Fonts -->
@@ -75,7 +75,7 @@
         <div class="glass-card rounded-2xl p-8 shadow-2xl">
             <div class="text-center mb-8">
                 <div class="flex justify-center mb-6">
-                    <img src="{{ asset('assets/img/logo-round.jpg') }}" alt="Own Education" class="h-[100px] w-auto object-contain rounded-full">
+                    <img src="{{ asset('assets/img/logo-round.jpg') }}" alt="Veata Education" class="h-[100px] w-auto object-contain rounded-full">
                 </div>
                 <!-- <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-blue-500/20 mx-auto mb-4">
                     <i class="fa-solid fa-graduation-cap text-xl text-white"></i>

@@ -33,7 +33,7 @@
                 <p class="text-gray-500 mt-1">Student ID: {{ str_pad($student->id, 6, '0', STR_PAD_LEFT) }}</p>
             </div>
             <div class="text-right">
-                <h2 class="text-xl font-bold text-purple-600">AstriaLearning</h2>
+                <h2 class="text-xl font-bold text-purple-600">Veata Education</h2>
                 <p class="text-sm text-gray-500 mt-1">123 School Street</p>
                 <p class="text-sm text-gray-500">Education City, ED 12345</p>
                 <p class="text-sm text-gray-500">contact@astria.com</p>
