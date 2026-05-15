@@ -533,49 +533,18 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-3xl lg:text-5xl font-bold text-white mb-12 text-center">Success <span class="text-gradient-gold">Stories</span></h2>
 
-            <div class="swiper testimonialSwiper pb-12">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide !w-full md:!w-[400px] !h-auto !bg-transparent p-4">
-                        <div class="glass-card p-8 rounded-3xl h-full flex flex-col relative">
-                            <i class="fa-solid fa-quote-left text-4xl text-blue-500/20 absolute top-6 left-6"></i>
-                            <p class="text-slate-300 mb-6 relative z-10 pt-4 leading-relaxed">"The dedicated faculty and state-of-the-art facilities have truly transformed my daughter's learning experience. She loves going to school every day!"</p>
-                            <div class="mt-auto flex items-center gap-4">
-                                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full border-2 border-blue-500" alt="Parent">
-                                <div>
-                                    <h4 class="text-white font-bold">Sarah Johnson</h4>
-                                    <p class="text-blue-400 text-xs">Parent, Grade 5</p>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Testimonials Coming Soon -->
+            <div class="text-center py-12">
+                <div class="inline-flex flex-col items-center gap-6 glass-card p-12 rounded-3xl max-w-2xl mx-auto border border-blue-500/20">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 text-3xl">
+                        <i class="fa-solid fa-comments"></i>
                     </div>
-                    <div class="swiper-slide !w-full md:!w-[400px] !h-auto !bg-transparent p-4">
-                        <div class="glass-card p-8 rounded-3xl h-full flex flex-col relative">
-                            <i class="fa-solid fa-quote-left text-4xl text-purple-500/20 absolute top-6 left-6"></i>
-                            <p class="text-slate-300 mb-6 relative z-10 pt-4 leading-relaxed">"Veata Education provided me with the foundation I needed to excel in university. The personalized attention from teachers was invaluable."</p>
-                            <div class="mt-auto flex items-center gap-4">
-                                <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-purple-500" alt="Alumni">
-                                <div>
-                                    <h4 class="text-white font-bold">Michael Chen</h4>
-                                    <p class="text-purple-400 text-xs">Alumni, Class of 2024</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide !w-full md:!w-[400px] !h-auto !bg-transparent p-4">
-                        <div class="glass-card p-8 rounded-3xl h-full flex flex-col relative">
-                            <i class="fa-solid fa-quote-left text-4xl text-emerald-500/20 absolute top-6 left-6"></i>
-                            <p class="text-slate-300 mb-6 relative z-10 pt-4 leading-relaxed">"The sports program here is exceptional. I've learned so much about teamwork and discipline both on and off the field."</p>
-                            <div class="mt-auto flex items-center gap-4">
-                                <img src="https://randomuser.me/api/portraits/men/85.jpg" class="w-12 h-12 rounded-full border-2 border-emerald-500" alt="Student">
-                                <div>
-                                    <h4 class="text-white font-bold">James Wilson</h4>
-                                    <p class="text-emerald-400 text-xs">Student, Grade 11</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3 class="text-2xl font-bold text-white">Be Our First Success Story</h3>
+                    <p class="text-slate-400 leading-relaxed max-w-md">We're just getting started — and we'd love your school to be one of our early partners. Register today and share your experience with us!</p>
+                    <a href="{{ route('school.register.terms') }}" class="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-blue-600 text-white font-bold hover:bg-blue-500 transition-all hover:-translate-y-0.5 shadow-lg shadow-blue-600/25">
+                        <i class="fa-solid fa-school"></i> Register Your School
+                    </a>
                 </div>
-                <div class="swiper-pagination !bottom-0"></div>
             </div>
         </div>
     </section>
@@ -663,21 +632,23 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                <!-- Basic Plan -->
+                <!-- Starter Plan -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-300">
-                    <h3 class="text-white font-bold text-2xl mb-2">Basic</h3>
-                    <p class="text-slate-400 text-sm mb-6">Small Schools</p>
+                    <h3 class="text-white font-bold text-2xl mb-2">Starter</h3>
+                    <p class="text-slate-400 text-sm mb-6">Small Schools &amp; Trial</p>
                     <div class="mb-8">
-                        <span class="text-4xl font-bold text-white" x-text="annual ? '$490' : '$49'">$49</span>
+                        <span class="text-3xl font-bold text-white" x-text="annual ? 'PKR 24,000' : 'PKR 2,500'">PKR 2,500</span>
                         <span class="text-slate-400" x-text="annual ? '/ year' : '/ month'">/ month</span>
                     </div>
                     <ul class="space-y-4 mb-8 text-slate-300 flex-1">
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Up to 200 Students</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Student Portal</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Attendance Tracking</li>
-                        <li class="flex items-center gap-3 opacity-50"><i class="fa-solid fa-xmark text-slate-500"></i> Online Exams</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Up to 300 Students</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Student &amp; Parent Portal</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Attendance Management</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Fee Collection &amp; Receipts</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Result &amp; Report Cards</li>
+                        <li class="flex items-center gap-3 opacity-50"><i class="fa-solid fa-xmark text-slate-500"></i> Multi-Branch Support</li>
                     </ul>
-                    <a href="#" class="block w-full py-3 rounded-xl border border-slate-600 text-white text-center font-bold hover:bg-slate-800 transition-colors">Start Free Trial</a>
+                    <a href="{{ route('school.register.terms') }}" class="block w-full py-3 rounded-xl border border-slate-600 text-white text-center font-bold hover:bg-slate-800 transition-colors">Start Free Trial</a>
                 </div>
 
                 <!-- Standard Plan -->
@@ -686,32 +657,41 @@
                     <h3 class="text-white font-bold text-2xl mb-2">Standard</h3>
                     <p class="text-blue-200 text-sm mb-6">Growing Institutions</p>
                     <div class="mb-8">
-                        <span class="text-4xl font-bold text-white" x-text="annual ? '$1,490' : '$149'">$149</span>
+                        <span class="text-4xl font-bold text-white" x-text="annual ? 'PKR 48,000' : 'PKR 4,500'">PKR 4,500</span>
                         <span class="text-slate-400" x-text="annual ? '/ year' : '/ month'">/ month</span>
                     </div>
                     <ul class="space-y-4 mb-8 text-slate-300 flex-1">
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Up to 1,000 Students</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Everything in Basic</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Online Exams</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Fee Management</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Everything in Starter</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Online Exam Module</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> SMS / WhatsApp Alerts</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Teacher Management</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Advanced Reports</li>
                     </ul>
-                    <a href="#" class="block w-full py-3 rounded-xl bg-blue-600 text-white text-center font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/25">Get Started</a>
+                    <a href="{{ route('school.register.terms') }}" class="block w-full py-3 rounded-xl bg-blue-600 text-white text-center font-bold hover:bg-blue-500 transition-colors shadow-lg shadow-blue-600/25">Get Started</a>
                 </div>
 
                 <!-- Enterprise Plan -->
                 <div class="glass-card p-8 rounded-3xl relative overflow-hidden flex flex-col hover:border-purple-500/30 transition-all duration-300">
                     <h3 class="text-white font-bold text-2xl mb-2">Enterprise</h3>
-                    <p class="text-slate-400 text-sm mb-6">Universities & Colleges</p>
+                    <p class="text-slate-400 text-sm mb-6">Large Institutions &amp; Chains</p>
                     <div class="mb-8">
-                        <span class="text-3xl font-bold text-white">Contact Us</span>
+                        <span class="text-3xl font-bold text-white">Custom Pricing</span>
                     </div>
                     <ul class="space-y-4 mb-8 text-slate-300 flex-1">
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Unlimited Students</li>
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Everything in Standard</li>
-                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Multi-Campus</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Multi-Branch / Campus</li>
                         <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Dedicated Support</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> Custom Integrations</li>
+                        <li class="flex items-center gap-3"><i class="fa-solid fa-check text-green-400"></i> On-site Training</li>
                     </ul>
-                    <a href="#" class="block w-full py-3 rounded-xl border border-slate-600 text-white text-center font-bold hover:bg-slate-800 transition-colors">Talk to Sales</a>
+                    <a href="https://wa.me/923409172223" target="_blank" class="block w-full py-3 rounded-xl border border-slate-600 text-white text-center font-bold hover:bg-slate-800 transition-colors">
+                        <i class="fa-brands fa-whatsapp mr-2 text-green-400"></i>Talk to Sales
+                    </a>
+                    <a href="https://wa.me/923028585151" target="_blank" class="block w-full py-3 rounded-xl border border-slate-600 text-white text-center font-bold hover:bg-slate-800 transition-colors">
+                        <i class="fa-brands fa-whatsapp mr-2 text-green-400"></i>Talk to Sales
+                    </a>
                 </div>
             </div>
         </div>
@@ -726,46 +706,35 @@
         <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900 z-0"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <!-- Stats Grid with Counters -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center text-white mb-24"
-                x-intersect="$el.querySelectorAll('.counter').forEach(el => {
-                     let start = 0;
-                     let end = parseInt(el.dataset.target);
-                     let duration = 2000;
-                     let stepTime = Math.abs(Math.floor(duration / end));
-                     let timer = setInterval(() => {
-                         start++;
-                         el.innerText = start;
-                         if (start >= end) clearInterval(timer);
-                     }, stepTime);
-                 })">
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-12 text-center text-white mb-24">
 
                 <div class="group hover:transform hover:scale-110 transition-transform duration-300">
                     <div class="text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300 filter drop-shadow-md">
-                        <span class="counter" data-target="1000">0</span>+
+                        12
                     </div>
-                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-blue-300 transition-colors">Students</div>
+                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-blue-300 transition-colors">Modules</div>
                 </div>
 
                 <div class="group hover:transform hover:scale-110 transition-transform duration-300">
                     <div class="text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-300 filter drop-shadow-md">
-                        <span class="counter" data-target="50">0</span>+
+                        5+
                     </div>
-                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-purple-300 transition-colors">Instructors</div>
+                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-purple-300 transition-colors">Roles Supported</div>
                 </div>
 
                 <div class="group hover:transform hover:scale-110 transition-transform duration-300">
                     <div class="text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-300 filter drop-shadow-md">
-                        <span class="counter" data-target="98">0</span>%
+                        PKR
                     </div>
-                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-emerald-300 transition-colors">University Placement</div>
+                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-emerald-300 transition-colors">Local Currency Billing</div>
                 </div>
 
                 <div class="group hover:transform hover:scale-110 transition-transform duration-300">
                     <div class="text-6xl font-extrabold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-300 filter drop-shadow-md">
-                        <span class="counter" data-target="24">0</span>/7
+                        24/7
                     </div>
-                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-orange-300 transition-colors">Support</div>
+                    <div class="text-sm font-bold uppercase tracking-widest opacity-80 group-hover:opacity-100 group-hover:text-orange-300 transition-colors">WhatsApp Support</div>
                 </div>
             </div>
 
@@ -810,15 +779,19 @@
                     <ul class="space-y-4">
                         <li class="flex items-start gap-4 text-slate-400 group">
                             <i class="fa-solid fa-location-dot mt-1 text-blue-400 group-hover:text-blue-300 transition-colors"></i>
-                            <span class="group-hover:text-slate-300 transition-colors">123 Education Lane,<br>Academic City, AC 12345</span>
+                            <span class="group-hover:text-slate-300 transition-colors">Pakistan</span>
                         </li>
                         <li class="flex items-center gap-4 text-slate-400 group">
-                            <i class="fa-solid fa-phone text-blue-400 group-hover:text-blue-300 transition-colors"></i>
-                            <span class="group-hover:text-slate-300 transition-colors">+1 (555) 123-4567</span>
+                            <i class="fa-brands fa-whatsapp text-green-400 group-hover:text-green-300 transition-colors"></i>
+                            <a href="https://wa.me/923409172223" target="_blank" class="group-hover:text-slate-300 transition-colors">+92 340 9172223</a>
+                        </li>
+                        <li class="flex items-center gap-4 text-slate-400 group">
+                            <i class="fa-brands fa-whatsapp text-green-400 group-hover:text-green-300 transition-colors"></i>
+                            <a href="https://wa.me/923028585151" target="_blank" class="group-hover:text-slate-300 transition-colors">+92 302 8585151</a>
                         </li>
                         <li class="flex items-center gap-4 text-slate-400 group">
                             <i class="fa-solid fa-envelope text-blue-400 group-hover:text-blue-300 transition-colors"></i>
-                            <span class="group-hover:text-slate-300 transition-colors">support@owneducation.com</span>
+                            <span class="group-hover:text-slate-300 transition-colors">support@vectabyte.com</span>
                         </li>
                     </ul>
                 </div>
@@ -970,7 +943,7 @@
                 </div> -->
             </div>
             <div class="p-3 bg-white border-t border-slate-100">
-                <a href="https://wa.me/03409172223" target="_blank" class="block w-full text-center bg-green-500 text-white font-bold py-2 rounded-lg hover:bg-green-600 transition-colors">
+                <a href="https://wa.me/923409172223" target="_blank" class="block w-full text-center bg-green-500 text-white font-bold py-2 rounded-lg hover:bg-green-600 transition-colors">
                     <i class="fa-brands fa-whatsapp mr-2"></i> Chat on WhatsApp
                 </a>
             </div>
