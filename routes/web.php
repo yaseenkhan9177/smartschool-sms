@@ -53,6 +53,7 @@ use App\Http\Controllers\Auth\UnifiedAuthController;
 Route::get('/login', [UnifiedAuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UnifiedAuthController::class, 'login'])->name('login.submit');
 Route::get('/logout', [UnifiedAuthController::class, 'logout'])->name('logout');
+Route::get('/forgot-password', [UnifiedAuthController::class, 'showForgotPassword'])->name('password.request');
 
 // Student Login (Redirect to unified)
 Route::get('/student/login', function () {
@@ -505,6 +506,7 @@ Route::prefix('super-admin')->group(function () {
         Route::get('/dashboard', [\App\Http\Controllers\SuperAdminController::class, 'index'])->name('dashboard');
         Route::get('/visitors', [\App\Http\Controllers\SuperAdminController::class, 'visitors'])->name('visitors');
         Route::get('/schools/{id}', [\App\Http\Controllers\SuperAdminController::class, 'show'])->name('schools.show');
+        Route::post('/schools/{id}/reset-password', [\App\Http\Controllers\SuperAdminController::class, 'resetSchoolPassword'])->name('schools.reset_password');
         Route::get('/impersonate/{id}', [\App\Http\Controllers\SuperAdminController::class, 'impersonate'])->name('impersonate');
         Route::post('/toggle-status/{id}', [\App\Http\Controllers\SuperAdminController::class, 'toggleStatus'])->name('toggle_status');
 

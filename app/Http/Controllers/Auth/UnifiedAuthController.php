@@ -10,12 +10,18 @@ use App\Models\Student;
 use App\Models\Teacher;
 use App\Models\Accountant;
 use App\Models\User;
+use App\Models\SuperAdmin;
 
 class UnifiedAuthController extends Controller
 {
     public function showLoginForm()
     {
         return view('auth.login');
+    }
+
+    public function showForgotPassword()
+    {
+        return view('auth.forgot-password');
     }
 
     public function login(Request $request)
@@ -25,9 +31,18 @@ class UnifiedAuthController extends Controller
             'password' => 'required',
         ]);
 
+        // 0. Check Super Admin (so all roles use one login page)
+        $superAdmin = SuperAdmin::where('email', $request->email)->first();
+        if ($superAdmin && Hash::check($request->password, $superAdmin->password)) {
+            if ($superAdmin->status !== 'active') {
+                return back()->with('error', 'Your Super Admin account is pending approval.');
+            }
+            Auth::guard('super_admin')->login($superAdmin);
+            $request->session()->regenerate();
+            return redirect()->route('super_admin.dashboard');
+        }
 
-
-        // 1. Check Admin (User Model)
+        // 1. Check Admin/School Admin (User Model)
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
             $user = Auth::user();
 
@@ -80,13 +95,8 @@ class UnifiedAuthController extends Controller
             return redirect()->route('accountant.dashboard');
         }
 
-
-
-
         // 5. Check Parent
-        // Search by email, since user wants to use email as login ID
         $parent = \App\Models\SchoolParent::where('email', $request->email)->first();
-
         if ($parent && Hash::check($request->password, $parent->password)) {
             Auth::guard('parent')->login($parent);
             $request->session()->put('parent_id', $parent->id);
@@ -95,14 +105,12 @@ class UnifiedAuthController extends Controller
             return redirect()->route('parent.dashboard');
         }
 
-
-
         return back()->with('error', 'Invalid email or password.');
     }
 
     public function logout(Request $request)
     {
-        Auth::logout(); // Logout web guard
+        Auth::logout();
         Auth::guard('teacher')->logout();
         Auth::guard('accountant')->logout();
         Auth::guard('super_admin')->logout();

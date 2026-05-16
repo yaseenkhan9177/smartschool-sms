@@ -305,4 +305,21 @@ class SuperAdminController extends Controller
 
         return back()->with('success', 'School request rejected.');
     }
+
+    public function resetSchoolPassword(Request $request, $id)
+    {
+        $request->validate([
+            'new_password' => 'required|string|min:8',
+        ]);
+
+        $school = User::findOrFail($id);
+
+        // Use DB update to bypass the model's 'hashed' password cast (avoids double-hashing)
+        DB::table('users')->where('id', $id)->update([
+            'password' => \Illuminate\Support\Facades\Hash::make($request->new_password),
+        ]);
+
+        return redirect()->route('super_admin.schools.show', $id)
+            ->with('password_reset_success', "✅ Password for '{$school->name}' ({$school->email}) has been reset. New password: {$request->new_password}");
+    }
 }

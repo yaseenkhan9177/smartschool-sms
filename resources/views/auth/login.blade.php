@@ -131,10 +131,9 @@
             </form>
 
             <div class="mt-8 text-center space-y-2">
-                
-                <p class="text-slate-400 text-xs">
-                    <a href="{{ route('super_admin.login') }}" class="text-slate-500 hover:text-slate-400 transition-colors">Super Admin Login</a>
-                </p>
+                <a href="{{ route('password.request') }}" class="text-slate-400 text-sm hover:text-blue-400 transition-colors">
+                    Forgot your password?
+                </a>
             </div>
         </div>
     </div>

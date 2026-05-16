@@ -48,7 +48,7 @@ class SuperAdminAuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('super_admin.login');
+        return redirect()->route('login');
     }
 
     // -------------------------------------------------------------------------

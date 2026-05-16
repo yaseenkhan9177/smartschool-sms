@@ -65,8 +65,8 @@
         </div>
     </div>
 
-    <!-- Additional Info (Placeholder) -->
-    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+    <!-- Instance Details -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 mb-6">
         <h3 class="text-lg font-bold text-gray-900 mb-4">Instance Details</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
             <div>
@@ -77,7 +77,64 @@
                 <p class="text-gray-500">Contact Phone</p>
                 <p class="font-medium">{{ $school->phone ?? 'N/A' }}</p>
             </div>
+            <div>
+                <p class="text-gray-500">Admin Name</p>
+                <p class="font-medium">{{ $school->name }}</p>
+            </div>
+            <div>
+                <p class="text-gray-500">Account Status</p>
+                <p class="font-medium capitalize {{ $school->status === 'active' ? 'text-green-600' : 'text-red-500' }}">{{ $school->status }}</p>
+            </div>
         </div>
+    </div>
+
+    <!-- Reset Admin Password -->
+    <div class="bg-white rounded-2xl shadow-sm border border-amber-200 p-6">
+        <div class="flex items-center mb-4">
+            <div class="p-2 bg-amber-50 rounded-xl mr-3">
+                <svg class="w-5 h-5 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                </svg>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold text-gray-900">Reset Admin Password</h3>
+                <p class="text-sm text-gray-500">If the admin forgot their password, you can set a new one here.</p>
+            </div>
+        </div>
+
+        @if(session('password_reset_success'))
+        <div class="mb-4 p-3 bg-green-50 border border-green-200 text-green-700 rounded-xl text-sm flex items-center gap-2">
+            <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            {{ session('password_reset_success') }}
+        </div>
+        @endif
+
+        @if($errors->has('new_password'))
+        <div class="mb-4 p-3 bg-red-50 border border-red-200 text-red-700 rounded-xl text-sm">
+            {{ $errors->first('new_password') }}
+        </div>
+        @endif
+
+        <form action="{{ route('super_admin.schools.reset_password', $school->id) }}" method="POST" class="flex flex-col sm:flex-row gap-3">
+            @csrf
+            <div class="flex-1">
+                <label class="block text-xs font-semibold text-gray-500 uppercase tracking-wider mb-1">New Password for <span class="text-indigo-600">{{ $school->name }}</span></label>
+                <input
+                    type="text"
+                    name="new_password"
+                    required
+                    minlength="8"
+                    placeholder="Enter new password (min 8 chars)"
+                    class="w-full px-4 py-2.5 rounded-xl border border-gray-200 bg-gray-50 text-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-amber-400 focus:border-transparent transition"
+                >
+            </div>
+            <div class="flex items-end">
+                <button type="submit" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white text-sm font-semibold rounded-xl shadow-sm transition-all hover:-translate-y-0.5 whitespace-nowrap">
+                    Reset Password
+                </button>
+            </div>
+        </form>
+        <p class="text-xs text-gray-400 mt-3">⚠️ After resetting, share the new password with the admin directly. Passwords are stored securely (hashed) and cannot be viewed.</p>
     </div>
 </div>
 @endsection
