@@ -216,7 +216,7 @@
                     <div class="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center p-0.5 group hover:scale-110 transition-transform duration-300">
                         <img src="{{ asset('assets/img/logo.jpg') }}" alt="vecta education" class="w-full h-full rounded-full object-cover">
                     </div>
-                    <span class="font-bold text-xl tracking-tight text-white">Veata <span class="text-blue-400">Education</span></span>
+                    <span class="font-bold text-xl tracking-tight text-white">vecta <span class="text-blue-400">Education</span></span>
                 </div>
 
                 <!-- Desktop Menu -->
@@ -301,7 +301,7 @@
             </div>
 
             <h1 class="text-5xl lg:text-8xl font-bold tracking-tight text-white mb-4 leading-tight drop-shadow-lg">
-                Veata <br>
+                vecta <br>
                 <span class="text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">Education</span>
             </h1>
 
@@ -763,7 +763,7 @@
                         <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
                             <i class="fa-solid fa-graduation-cap text-white text-lg"></i>
                         </div>
-                        <span class="font-bold text-2xl text-white">Veata <span class="text-blue-400">Education</span></span>
+                        <span class="font-bold text-2xl text-white">vecta <span class="text-blue-400">Education</span></span>
                     </div>
                     <p class="text-slate-400 max-w-sm leading-relaxed text-lg">
                         Empowering educational institutions with cutting-edge technology for a brighter, more connected future.
