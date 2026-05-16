@@ -190,6 +190,8 @@ Route::middleware(['auth:web', 'license.active'])->group(function () {
     // Manage Students
     Route::get('/admin/students', [AdminController::class, 'manageStudents'])->name('admin.students');
     Route::get('/admin/students/create', [AdminController::class, 'createStudent'])->name('admin.students.create');
+    Route::get('/admin/students/import', [\App\Http\Controllers\StudentController::class, 'showImportForm'])->name('admin.students.import');
+    Route::post('/admin/students/import', [\App\Http\Controllers\StudentController::class, 'import'])->name('admin.students.import.process');
     Route::post('/admin/students/store', [\App\Http\Controllers\StudentController::class, 'store'])->name('admin.students.store');
     Route::get('/admin/students/edit/{id}', [AdminController::class, 'editStudent'])->name('admin.students.edit');
     Route::post('/admin/students/update/{id}', [AdminController::class, 'updateStudent'])->name('admin.students.update');
@@ -300,6 +302,8 @@ Route::middleware(['auth:accountant'])->group(function () {
         // Students
         Route::get('students', [AccountantDashboardController::class, 'students'])->name('students.index');
         Route::get('students/create', [AccountantDashboardController::class, 'createStudent'])->name('students.create');
+        Route::get('students/import', [\App\Http\Controllers\StudentController::class, 'showImportForm'])->name('students.import');
+        Route::post('students/import', [\App\Http\Controllers\StudentController::class, 'import'])->name('students.import.process');
         Route::post('students/store', [\App\Http\Controllers\StudentController::class, 'store'])->name('students.store');
         Route::post('students/{id}/reset-password', [AccountantDashboardController::class, 'resetStudentPassword'])->name('students.password.reset');
         Route::get('students/{id}/fee-card', [\App\Http\Controllers\StudentFeeController::class, 'feeCard'])->name('students.fee_card');

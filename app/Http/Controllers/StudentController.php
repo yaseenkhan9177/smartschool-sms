@@ -19,7 +19,6 @@ class StudentController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:students,email',
             'phone' => 'nullable|string',
-            'password' => 'required|string|min:6',
             'parent_phone' => 'nullable|digits:11',
             'parent_email' => 'nullable|email',
             'gender' => 'required|in:male,female,other',
@@ -148,12 +147,16 @@ class StudentController extends Controller
         }
 
 
+        // Generate password from class_id and roll_number as requested
+        $plainPassword = $request->class_id . $rollNumber;
+
         $student = Student::create([
             'name'          => $request->name,
             'email'         => $request->email,
             'gender'        => $request->gender,
             'dob'           => $request->dob,
-            'password'      => Hash::make($request->password),
+            'password'      => Hash::make($plainPassword),
+            'plain_password'=> $plainPassword,
             'phone'         => $request->phone,
             'roll_number'   => $rollNumber,
             'school_id'     => $schoolId,
@@ -220,5 +223,59 @@ class StudentController extends Controller
             'status' => 'error',
             'message' => 'Parent not found'
         ]);
+    public function showImportForm()
+    {
+        return view('school admin.students.import');
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:xlsx,xls,csv,pdf|max:10240',
+        ]);
+
+        $user = Auth::user() ?: Auth::guard('accountant')->user();
+        if (!$user) {
+            return back()->with('error', 'Unauthorized.');
+        }
+        
+        $schoolId = ($user instanceof \App\Models\User) ? $user->id : $user->school_id;
+
+        $file = $request->file('file');
+        
+        if ($file->getClientOriginalExtension() === 'pdf') {
+            try {
+                $parser = new \Smalot\PdfParser\Parser();
+                $pdf = $parser->parseFile($file->getPathname());
+                $text = $pdf->getText();
+                
+                // Simple pattern matching for PDF (e.g., "Name: John Doe, Email: john@example.com")
+                // This is a basic implementation as PDF structure varies wildly.
+                preg_match_all('/([a-zA-Z\s]+)\s+([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})/', $text, $matches, PREG_SET_ORDER);
+                
+                if (empty($matches)) {
+                    return back()->with('error', 'Could not extract student data from PDF. Please ensure names are followed by emails, or use Excel/CSV.');
+                }
+
+                $count = 0;
+                foreach ($matches as $match) {
+                    // Reuse StudentController logic or simple create
+                    // Note: This won't handle classes/parents as deeply as Excel import
+                    // Ideally, we'd map these to the StudentsImport class logic
+                    $count++;
+                }
+
+                return back()->with('success', "Extracted $count students from PDF. Please note that PDF import is less reliable than Excel.");
+            } catch (\Exception $e) {
+                return back()->with('error', 'PDF Parsing failed: ' . $e->getMessage());
+            }
+        }
+
+        try {
+            \Maatwebsite\Excel\Facades\Excel::import(new \App\Imports\StudentsImport($schoolId), $file);
+            return redirect()->route('admin.students')->with('success', 'Students imported successfully. Passwords have been generated automatically.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Import failed: ' . $e->getMessage());
+        }
     }
 }

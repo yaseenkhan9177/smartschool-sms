@@ -28,6 +28,7 @@ class Student extends Authenticatable
         'dob',
         'parent_id',
         'family_id', // Family System
+        'plain_password',
     ];
 
 

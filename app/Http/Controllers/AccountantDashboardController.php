@@ -308,4 +308,40 @@ class AccountantDashboardController extends Controller
 
         return back()->with('success', 'Student password reset successfully.');
     }
+    public function showStudent($id)
+    {
+        $student = \App\Models\Student::with('schoolClass')->findOrFail($id);
+        $accountant = \Illuminate\Support\Facades\Auth::guard('accountant')->user();
+
+        // Ensure student belongs to accountant's school
+        if ($student->school_id !== $accountant->school_id) {
+            abort(403, 'Unauthorized');
+        }
+
+        // Get last 12 months fee history
+        $twelveMonthsAgo = \Carbon\Carbon::now()->subMonths(12)->startOfMonth()->format('Y-m');
+
+        $feeHistory = \App\Models\StudentFee::with('payments', 'feeStructure.feeCategory')
+            ->where('student_id', $id)
+            ->where('month', '>=', $twelveMonthsAgo)
+            ->orderBy('month', 'desc')
+            ->get();
+
+        $totalPaid = 0;
+        $totalPending = 0;
+
+        foreach ($feeHistory as $fee) {
+            $paid = $fee->payments->sum('amount_paid');
+            $totalPaid += $paid;
+
+            $payable = ($fee->amount + $fee->late_fee) - $fee->discount;
+            if ($fee->status !== 'paid') {
+                $totalPending += max(0, $payable - $paid);
+            }
+        }
+
+        $invoices = $feeHistory->groupBy('invoice_no');
+
+        return view('accountant.students.show', compact('student', 'invoices', 'totalPaid', 'totalPending'));
+    }
 }

@@ -16,9 +16,9 @@
             <a href="{{ route('admin.students.create') }}" class="px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 shadow-lg shadow-indigo-600/20 transition-all flex items-center gap-2">
                 <i class="fa-solid fa-plus"></i> Register Student
             </a>
-            <button onclick="alert('Import Feature Coming Soon!')" class="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all flex items-center gap-2">
-                <i class="fa-solid fa-file-csv"></i> Import Excel/CSV
-            </button>
+            <a href="{{ route('admin.students.import') }}" class="px-4 py-2 bg-emerald-600 text-white rounded-lg text-sm font-medium hover:bg-emerald-700 shadow-lg shadow-emerald-600/20 transition-all flex items-center gap-2">
+                <i class="fa-solid fa-file-excel"></i> Bulk Import
+            </a>
             <button @click="navigator.clipboard.writeText('{{ route('parent.registration') }}'); copied = true; setTimeout(() => copied = false, 2000)"
                 class="px-4 py-2 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 shadow-lg shadow-blue-600/20 transition-all flex items-center gap-2">
                 <i class="fa-solid" :class="copied ? 'fa-check' : 'fa-link'"></i>

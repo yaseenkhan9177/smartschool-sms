@@ -20,7 +20,52 @@ $layout = request()->routeIs('admin.*') ? 'layouts.admin' : 'layouts.accountant'
             @endif
             <div>
                 <h1 class="text-2xl font-bold text-gray-800">{{ $student->name }}</h1>
-                <p class="text-sm text-gray-500 mt-1">Roll Number: <span class="font-medium text-gray-700">{{ $student->roll_number }}</span> | Class: <span class="font-medium text-gray-700">{{ $student->schoolClass->name ?? 'N/A' }}</span></p>
+                <p class="text-sm text-gray-500 mt-1">
+                    Roll Number: <span class="font-medium text-gray-700">{{ $student->roll_number }}</span> | 
+                    Class: <span class="font-medium text-gray-700">{{ $student->schoolClass->name ?? 'N/A' }}</span>
+                </p>
+                @if($student->plain_password)
+                <div class="flex items-center gap-2 mt-2">
+                    <span class="text-xs font-semibold text-gray-400 uppercase tracking-widest">Password:</span>
+                    <div class="flex items-center bg-gray-100 px-2 py-1 rounded-lg border border-gray-200">
+                        <span id="password-text" class="text-sm font-mono text-gray-700 blur-[3px] transition-all duration-300 select-none">
+                            {{ $student->plain_password }}
+                        </span>
+                        <button onclick="togglePasswordReveal()" class="ml-2 text-gray-400 hover:text-indigo-500 transition-colors" title="Toggle Reveal">
+                            <i id="reveal-icon" class="fa-solid fa-eye text-xs"></i>
+                        </button>
+                        <button onclick="copyPassword('{{ $student->plain_password }}')" class="ml-2 text-gray-400 hover:text-green-500 transition-colors" title="Copy Password">
+                            <i class="fa-solid fa-copy text-xs"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <script>
+                    function togglePasswordReveal() {
+                        const text = document.getElementById('password-text');
+                        const icon = document.getElementById('reveal-icon');
+                        if (text.classList.contains('blur-[3px]')) {
+                            text.classList.remove('blur-[3px]');
+                            text.classList.add('blur-none');
+                            icon.classList.replace('fa-eye', 'fa-eye-slash');
+                        } else {
+                            text.classList.add('blur-[3px]');
+                            text.classList.remove('blur-none');
+                            icon.classList.replace('fa-eye-slash', 'fa-eye');
+                        }
+                    }
+
+                    function copyPassword(password) {
+                        navigator.clipboard.writeText(password).then(() => {
+                            const toast = document.createElement('div');
+                            toast.className = 'fixed bottom-4 right-4 bg-gray-800 text-white px-4 py-2 rounded-lg text-sm shadow-xl z-50 animate-bounce';
+                            toast.innerText = '✅ Password copied to clipboard!';
+                            document.body.appendChild(toast);
+                            setTimeout(() => toast.remove(), 2000);
+                        });
+                    }
+                </script>
+                @endif
             </div>
         </div>
         <a href="{{ request()->routeIs('admin.*') ? route('admin.students') : route('accountant.students.index') }}" class="text-sm bg-white border border-gray-200 text-gray-700 hover:bg-gray-50 px-4 py-2 rounded-lg font-medium shadow-sm transition flex items-center">
